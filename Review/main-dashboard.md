@@ -8,7 +8,7 @@ banner_x: 0.5
 banner_y: 0.604
 created: 11.08.2024, 17:23:13
 obsidianUIMode: preview
-updated: 04-01-2025, 19:45:33
+updated: 04-01-2025, 20:45:59
 ---
 
 > [!multi-column]
@@ -161,6 +161,107 @@ ${getStatusEmoji(parent.status)}
 
 // Render tasks
 dv.table(["Todo", "Task"], tableData);
+```
+
+<br>
+
+<!-- CURRENT TRAINING PLAN -->
+
+> [!multi-column]
+>
+> > [!summary] Current Training Plan
+>
+> ```dataviewjs
+> const trainingPlansNote = "Review/training-plan-tracker.md";
+>
+> const container = this.container;
+> container.innerHTML = "";
+>
+> const button = document.createElement("button");
+> button.textContent = "Training Plans";
+> button.style.padding = "8px 16px";
+> button.style.marginTop = "10px";
+> button.style.cursor = "pointer";
+> button.style.float = "right";
+>
+> button.onclick = () => {
+>   app.workspace.openLinkText(trainingPlansNote, '', false);
+> };
+>
+> container.appendChild(button);
+> ```
+
+```dataviewjs
+const trainingPlansNote = "Review/training-plan-tracker.md";
+
+const trainingPlans = dv.page(trainingPlansNote)?.['training-plans'] || [];
+
+const container = this.container;
+container.innerHTML = "";
+
+if (trainingPlans.length > 0) {
+  const currentPlan = trainingPlans[trainingPlans.length - 1];
+
+  const formatDate = (date) => {
+    if (!date) return "-";
+    const d = new Date(date);
+    return d.toLocaleDateString("pl-PL", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+  };
+
+  const isCompleted =
+    typeof currentPlan.count === "number" &&
+    typeof currentPlan.limit === "number" &&
+    currentPlan.count === currentPlan.limit;
+
+  const table = document.createElement("table");
+  table.style.width = "100%";
+  table.style.borderCollapse = "collapse";
+  table.style.marginTop = "10px";
+
+  // Table header
+  const thead = document.createElement("thead");
+  thead.innerHTML = `
+    <tr>
+      <th style="border: 1px solid #ccc; padding: 8px;">Training</th>
+      <th style="border: 1px solid #ccc; padding: 8px;">Limit</th>
+      <th style="border: 1px solid #ccc; padding: 8px;">Payment</th>
+      <th style="border: 1px solid #ccc; padding: 8px;">Started</th>
+      <th style="border: 1px solid #ccc; padding: 8px;">Finished</th>
+    </tr>
+  `;
+  table.appendChild(thead);
+
+  // Data row
+  const tbody = document.createElement("tbody");
+  const row = document.createElement("tr");
+  row.style.backgroundColor = isCompleted ? "#238636" : "transparent";
+
+  const paymentDate = formatDate(currentPlan["payment-date"])
+
+  row.innerHTML = `
+    <td style="border: 1px solid #ccc; padding: 8px; text-align: center;">${currentPlan.count ?? "-"}</td>
+    <td style="border: 1px solid #ccc; padding: 8px; text-align: center;">${currentPlan.limit ?? "-"}</td>
+    <td style="border: 1px solid #ccc; padding: 8px; text-align: center;">
+        ${paymentDate == "-" ? "" : paymentDate} ${currentPlan["payment-date"] ? "✅" : "⚠️"}
+    </td>
+    <td style="border: 1px solid #ccc; padding: 8px; text-align: center;">${formatDate(currentPlan["started-date"])}</td>
+    <td style="border: 1px solid #ccc; padding: 8px; text-align: center;">${formatDate(currentPlan["finished-date"])}</td>
+  `;
+  tbody.appendChild(row);
+  table.appendChild(tbody);
+
+  container.appendChild(table);
+} else {
+  // No plans
+  const message = document.createElement("p");
+  message.textContent = "No training plans";
+  message.style.marginTop = "10px";
+  container.appendChild(message);
+}
 ```
 
 <!-- HABITS BUTTONS -->

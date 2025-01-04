@@ -4,22 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "4509724f8bf84da7",
+        "id": "b6474e7f24ce314b",
         "type": "tabs",
         "children": [
           {
-            "id": "b9468cb6e1257a22",
+            "id": "5c2954b126f28530",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Review/habit-tracker.md",
+                "file": "Review/main-dashboard.md",
                 "mode": "preview",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "habit-tracker"
+              "title": "main-dashboard"
             }
           }
         ]
@@ -74,7 +74,8 @@
               "title": "Files"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -149,8 +150,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "b9468cb6e1257a22",
+  "active": "5c2954b126f28530",
   "lastOpenFiles": [
+    "Review/training-plan-tracker.md",
+    "Review/training-plan-tracker.md~",
     "Review/main-dashboard.md",
     "Review/habit-tracker.md",
     "Review/Daily/2025-01-01.md",
@@ -185,8 +188,6 @@
     "Review/Daily/2024-11-17.md",
     "Review/Daily/2024-11-11.md",
     "Review/Daily/2024-11-18.md",
-    "prompt-auto-map-lifeos.md",
-    "todo.md",
     "todo.md~",
     "templates/lifeos-weekly.md~",
     "templates/lifeos-goal.md~",
@@ -196,7 +197,6 @@
     "drawing.json",
     "Review/Goals/test2.md~",
     "Excalidraw",
-    "Review/goals-dashboard.md~",
     "Untitled.canvas"
   ]
 }
