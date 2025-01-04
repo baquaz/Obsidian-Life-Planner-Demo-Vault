@@ -5,7 +5,7 @@ aliases:
 tags: []
 created: 10.08.2024, 02:09:53
 obsidianUIMode: preview
-updated: 04-01-2025, 19:47:38
+updated: 04-01-2025, 21:11:44
 yearToShow: 2025
 ---
 
