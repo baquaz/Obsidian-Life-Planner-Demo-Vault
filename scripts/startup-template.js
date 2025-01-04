@@ -43,18 +43,18 @@ async function setupNoteListeners() {
     await logError(`Weekly Note Listener Error: ${error.message}`);
   }
 
-  try {
-    const newGoalListenerFile = app.vault.getAbstractFileByPath('scripts/goal-listener.js');
-    if (newGoalListenerFile) {
-      const newGoalListenerScript = await app.vault.read(newGoalListenerFile);
-      const setupNewGoalListener = new Function('return ' + newGoalListenerScript)().default;
-      await setupNewGoalListener();
-    } else { 
-      throw new Error('new goal listener script is missing!');
-    }
-  } catch (error) {
-    await logError(`New Goal Listener Error: ${error.message}`);
-  }
+//  try {
+//    const newGoalListenerFile = app.vault.getAbstractFileByPath('scripts/goal-listener.js');
+//    if (newGoalListenerFile) {
+//      const newGoalListenerScript = await app.vault.read(newGoalListenerFile);
+//      const setupNewGoalListener = new Function('return ' + newGoalListenerScript)().default;
+//      await setupNewGoalListener();
+//    } else { 
+//      throw new Error('new goal listener script is missing!');
+//    }
+//  } catch (error) {
+//    await logError(`New Goal Listener Error: ${error.message}`);
+//  }
 }
 
 await setupNoteListeners();

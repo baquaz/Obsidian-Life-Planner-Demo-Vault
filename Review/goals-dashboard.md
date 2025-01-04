@@ -7,7 +7,7 @@ created: 28.06.2024, 00:14:17
 cssclasses:
   - cards
 obsidianUIMode: preview
-updated: 13-11-2024, 20:10:59
+updated: 24-11-2024, 15:19:22
 ---
 
 `BUTTON[main-dashboard]`
