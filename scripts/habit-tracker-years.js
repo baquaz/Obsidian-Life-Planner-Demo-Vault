@@ -1,4 +1,4 @@
-const yearToShow = 2024; // Adjust as needed
+const yearToShow = dv.current().yearToShow || moment().year();
 
 function getYearRange(year) {
   const start = moment().year(year).startOf('year');

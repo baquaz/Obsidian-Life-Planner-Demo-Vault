@@ -5,13 +5,30 @@ aliases:
 tags: []
 created: 10.08.2024, 02:09:53
 obsidianUIMode: preview
-updated: 01-11-2024, 21:33:12
+updated: 04-01-2025, 19:47:38
+yearToShow: 2025
 ---
 
-# Habit Tracker
+# Habit Tracker `INPUT[number(placeholder(year), class(meta-bind-small-width)):yearToShow]` `BUTTON[current-year]`
+
+<!-- BUTTON current year-->
+
+```meta-bind-button
+label: "current year"
+id: "current-year"
+style: default
+hidden: true
+actions:
+  - type: updateMetadata
+    bindTarget: yearToShow
+    evaluate: true
+    value: "moment().year()"
+```
+
+<!-- TABLE -->
 
 ```dataviewjs
-const yearToShow = 2024; // Adjust as needed
+const yearToShow = dv.current().yearToShow || moment().year();
 
 function getYearRange(year) {
   const start = moment().year(year).startOf('year');

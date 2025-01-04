@@ -8,7 +8,7 @@ banner_x: 0.5
 banner_y: 0.604
 created: 11.08.2024, 17:23:13
 obsidianUIMode: preview
-updated: 26-11-2024, 20:33:01
+updated: 04-01-2025, 19:45:33
 ---
 
 > [!multi-column]
@@ -245,7 +245,7 @@ dv.table(tableHeaders, fileRows);
 ```dataviewjs
 dv.span("** Productivity **")
 const calendarData = {
-  year: 2024, // Adjust as needed
+  year: moment().year(),
   entries: [],
 }
 

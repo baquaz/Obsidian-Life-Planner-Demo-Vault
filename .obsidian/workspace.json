@@ -8,18 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e7a7b303c61786dc",
+            "id": "b9468cb6e1257a22",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Review/main-dashboard.md",
+                "file": "Review/habit-tracker.md",
                 "mode": "preview",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "main-dashboard"
+              "title": "habit-tracker"
             }
           }
         ]
@@ -149,11 +149,15 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "b9468cb6e1257a22",
   "lastOpenFiles": [
     "Review/main-dashboard.md",
-    "Review/goals-dashboard.md",
     "Review/habit-tracker.md",
+    "Review/Daily/2025-01-01.md",
+    "Review/Daily/2025-01-02.md",
+    "Review/Daily/2025-01-03.md",
+    "Review/Daily/2025-01-04.md",
+    "Review/goals-dashboard.md",
     "Review/Daily/2024-11-25.md",
     "Review/Daily/2024-11-24.md",
     "Review/Goals/testme.md",
@@ -183,11 +187,7 @@
     "Review/Daily/2024-11-18.md",
     "prompt-auto-map-lifeos.md",
     "todo.md",
-    "templates/lifeos-weekly.md",
-    "templates/lifeos-daily.md",
-    "todo-legend.md",
     "todo.md~",
-    "README.md",
     "templates/lifeos-weekly.md~",
     "templates/lifeos-goal.md~",
     "templates/lifeos-daily.md~",
